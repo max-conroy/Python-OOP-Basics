@@ -44,7 +44,7 @@
 
 
 # Create MyDog class
-class MyDog():
+class MyDog:
     def __init__(self, breed, name, age, color):
         self.breed = breed
         self.name = name
@@ -56,7 +56,7 @@ class MyDog():
         print("{} is walking!".format(self.name))
 
     def eat(self, food):
-        print("{} is eating {}}!".format(self.name, food))
+        print("{} is eating {}!".format(self.name, food))
 
     def sleep(self):
         self.isAsleep = True
@@ -70,10 +70,10 @@ class MyDog():
         print("Breed: {}, Name: {}, Age: {}, Color: {}".format(self.breed, self.name, self.age, self.color))
 
 
-# Main function to instantiate MyDog class
+# Main function to instantiate MyDog class and use the MyDog objects
 def main():
     mila = MyDog("German Shepherd", "Mila", "8", "Black")
-    freyja = MyDog("Australian Shepherd", "Freyja", "Red")
+    freyja = MyDog("Australian Shepherd", "Freyja", "1", "Red")
 
     mila.walk()
     mila.sleep()
