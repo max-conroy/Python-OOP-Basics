@@ -43,8 +43,33 @@
 # ➢ Check if two instances need checkup using checkup_needed method.
 
 
+from datetime import datetime
+
+
 # Create MyDog class
 class MyDog:
+    # Class attribute
+    home_address = ""
+
+    # Class method to find the age from birth_year parameter
+    @classmethod
+    def from_birth_year(cls, birth_year):
+        current_year = datetime.now().year
+        cls.age = current_year - birth_year
+        return cls.age
+
+    # Class method to change dog's home address
+    @classmethod
+    def move(cls, destination):
+        cls.home_address = destination
+        print("We moved to {}!".format(cls.home_address))
+
+    # Static method that will determine if dog needs checkup by age parameter
+    @staticmethod
+    def checkup_needed(age):
+        return (int(age) - 1) % 3 == 0
+
+    # Instance method to initialize several instance attributes
     def __init__(self, breed, name, age, color):
         self.breed = breed
         self.name = name
@@ -72,9 +97,12 @@ class MyDog:
 
 # Main function to instantiate MyDog class and use the MyDog objects
 def main():
+    # Begin assignment 1 "Main" branch
+    # Instantiate both dogs
     mila = MyDog("German Shepherd", "Mila", "8", "Black")
     freyja = MyDog("Australian Shepherd", "Freyja", "1", "Red")
 
+    # Begin using methods of both dog objects
     mila.walk()
     mila.sleep()
 
@@ -86,6 +114,19 @@ def main():
 
     mila.info()
     freyja.info()
+
+    # Begin assignment 2 "Feature1" branch
+    # See Mila's current address
+    print(mila.home_address)
+    mila.move("613 Doggo Street, Pittsburgh PA 15201")
+    # See is Freyja's address was affected
+    print(freyja.home_address)
+
+    # Determine if either dog requires a checkup
+    print(mila.checkup_needed(mila.age))
+    print(freyja.checkup_needed(freyja.age))
+
+    print(mila.from_birth_year(2013))
 
 
 # Call main function
