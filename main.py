@@ -77,6 +77,10 @@ class MyDog:
         self.color = color
         self.isAsleep = False
 
+    #
+    # The following are various instance methods, which are part of assignment 1
+    #
+
     def walk(self):
         print("{} is walking!".format(self.name))
 
@@ -122,10 +126,11 @@ def main():
     # See is Freyja's address was affected
     print(freyja.home_address)
 
-    # Determine if either dog requires a checkup
+    # Determine if either dog requires a checkup (print True or False)
     print(mila.checkup_needed(mila.age))
     print(freyja.checkup_needed(freyja.age))
 
+    # Find and print Mila's age based on her birth year
     print(mila.from_birth_year(2013))
 
 
